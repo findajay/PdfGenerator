@@ -54,7 +54,7 @@ namespace VanhackPdfGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void browseSrc_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
             //To where your opendialog box get starting location. My initial directory location is desktop.
             openFileDialog1.InitialDirectory = "C://Desktop";
@@ -71,7 +71,7 @@ namespace VanhackPdfGenerator
                     if (openFileDialog1.CheckFileExists)
                     {
                         string path = System.IO.Path.GetFullPath(openFileDialog1.FileName);
-                        srcPath.Text = path;
+                        srcDoc.Text = path;
                         SRCDocument = path;
                     }
                 }
@@ -91,7 +91,7 @@ namespace VanhackPdfGenerator
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void browseOut_Click(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
             //To where your opendialog box get starting location. My initial directory location is desktop.
             openFileDialog2.InitialDirectory = "C://Desktop";
@@ -108,13 +108,53 @@ namespace VanhackPdfGenerator
                     if (openFileDialog2.CheckFileExists)
                     {
                         string path = System.IO.Path.GetFullPath(openFileDialog2.FileName);
-                        outputPath.Text = path;
+                        DesDoc.Text = path;
                         OUTDocument = path;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Please Upload document.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var isTrue = DataFieldProcessor.ProcessPdfFormFields(SRCDocument, OUTDocument);
+                if (isTrue)
+                {
+                    MessageBox.Show("Pdf successfully rendered at output location. " + OUTDocument);
+                }
+                else
+                {
+                    MessageBox.Show("We are having some trouble in processing selected pdf.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var isTrue = DataFieldProcessor.ProcessPdfFormFields(SRCDocument, OUTDocument);
+                if (isTrue)
+                {
+                    MessageBox.Show("Pdf successfully rendered at output location. " + OUTDocument);
+                }
+                else
+                {
+                    MessageBox.Show("We are having some trouble in processing selected pdf.");
                 }
             }
             catch (Exception ex)
