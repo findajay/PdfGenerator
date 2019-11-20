@@ -33,5 +33,9 @@ Download exe installer for this utility from url above, this can be installed on
 ## Output:
 The same PDF which you selected in Ouput file with some data filled in on page 1 and page 2
 
+## Development Tools used while developing 
+1. Visual Studio 2019 
+2. JIRA for canban board and stories 
+3. Visual Studio code 
 
 
