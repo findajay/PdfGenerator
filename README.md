@@ -11,6 +11,12 @@ I have attached screenshot of JIRA kanban board that i was using to develop this
 ## What and how
 This utility is will generate a new version with all its fields filled out on page 1 and page 2.
 
+## Pdf Library 
+
+I am using iText 7 which is a library for creating and manipulating PDF files in Java and .NET. iText was written by Bruno Lowagie. The source code was initially distributed as open source under the Mozilla Public License or the GNU Library General Public License open source licenses.
+
+It was built on nearly a decade of lessons learned from iText 5 (and iTextSharp) development. It is a simpler, more performant and extensible library that is ready to handle the increased challenges of today's document workflows, one add-on at a time.
+
 ## How to run :
 There are two ways to run this utility either checkout source code from git-hub repository - https://github.com/findajay/PdfGenerator/tree/Development
 open it in visual studio and click F5 on system.
